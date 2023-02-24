@@ -33,7 +33,7 @@ public class ApiController {
 		return pizzarepo.findAll();
 	}
 	
-	@GetMapping("/{id}")		
+	@GetMapping("{id}")		
 	public ResponseEntity<Pizza> detail(@PathVariable("id") Integer id) {
 		Optional<Pizza> res=pizzarepo.findById(id);
 		if (res.isPresent()) 
@@ -46,7 +46,7 @@ public class ApiController {
 	public Pizza create(@RequestBody Pizza pizza) {
 		return pizzarepo.save(pizza);
 	}	
-	@PutMapping("/{id}")	
+	@PutMapping("{id}")	
 	public Pizza update(@RequestBody Pizza pizza,
 			@PathVariable("id") Integer id) {
 		Pizza p=pizzarepo.getReferenceById(id);
@@ -55,7 +55,7 @@ public class ApiController {
 		return pizzarepo.save(p);
 	}
 	
-	@DeleteMapping("/{id}")	
+	@DeleteMapping("{id}")	
 	public void delete(
 			@PathVariable("id") Integer id) {
 		pizzarepo.deleteById(id);
