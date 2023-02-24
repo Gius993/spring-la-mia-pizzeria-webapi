@@ -49,10 +49,10 @@ public class ApiController {
 	@PutMapping("{id}")	
 	public Pizza update(@RequestBody Pizza pizza,
 			@PathVariable("id") Integer id) {
-		Pizza p=pizzarepo.getReferenceById(id);
-		p.setId(id);
-		//....
-		return pizzarepo.save(p);
+		
+		pizza.setId(id);
+		
+		return pizzarepo.save(pizza);
 	}
 	
 	@DeleteMapping("{id}")	
