@@ -50,7 +50,7 @@ public class ApiController {
 	public Pizza update(@RequestBody Pizza pizza,
 			@PathVariable("id") Integer id) {
 		Pizza p=pizzarepo.getReferenceById(id);
-		p.setName(pizza.getName());
+		p.setId(id);
 		//....
 		return pizzarepo.save(p);
 	}
