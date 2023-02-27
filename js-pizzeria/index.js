@@ -6,6 +6,7 @@ function pizzeList(){
 		list.data.forEach(pizza => {
 		document.getElementById("pizze_list").innerHTML += `<li><a href="detail.html?id=${pizza.id}">${pizza.name}</a></li> `;
 		});
+		document.getElementById("create_page").innerHTML += `<a href="create.html">vai a crea pizza</a>`;
 	}).catch((list) =>{
 	console.error("non si puo eseguire la pagina riprova dopo" , list);
 	alert('Errore durante la connessione');
